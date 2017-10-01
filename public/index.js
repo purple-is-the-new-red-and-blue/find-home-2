@@ -98,3 +98,21 @@ var data = [
   }
 
 });
+
+var width = 500;
+var rectAndCircleTestData = [
+    {times: [{"starting_time": 1355752800000,
+             "display": "circle"}, {"starting_time": 1355767900000, "ending_time": 1355774400000}]},
+    {times: [{"starting_time": 1355759910000,
+    "display":"circle"}, ]},
+    {times: [{"starting_time": 1355761910000, "ending_time": 1355763910000}]}
+  ];
+
+function timelineRectAndCircle() {
+    var chart = d3.timeline();
+
+    var svg = d3.select("#timeline2_combine").append("svg").attr("width", width)
+      .datum(rectAndCircleTestData).call(chart);
+  }
+
+timelineRectAndCircle();
