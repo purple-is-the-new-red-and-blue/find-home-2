@@ -252,7 +252,12 @@ var data = [
     {times: [{"starting_time": 1355761910000, "ending_time": 1355763910000}]}
 ];
 
-    var chart = d3.timeline();
+    var chart = d3.timeline().tickFormat({
+        format: d3.time.format.utc("%m/%d"),
+        tickTime: d3.time.hours,
+        tickInterval: 1,
+        tickSize: 12
+    });
 
     var svg = d3.select("#timeline").append("svg").attr("width", 800)
         .datum(testData).call(chart);
